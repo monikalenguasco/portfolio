@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f5f6fa ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.stepsText {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 25px;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    position: relative;
+}
+
+.progress-steps::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+    background-color: #e0e0e0;
+
+}
+
+.progress-bar {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 0%;
+    z-index: -1;
+    background-color: #3498db;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #e0e0e0;
+    background-color: white;
+    color: #e0e0e0;
+}
+
+.circle.active#step1 {
+    border-color: #3498db;
+    transition: 0.5s ease;
+}
+
+.circle.active#step2 {
+    border-color: teal;
+    transition: 0.5s ease;
+}
+
+.circle.active#step3 {
+    border-color: hotpink;
+    transition: 0.5s ease;
+}
+
+.circle.active#step4 {
+    border-color: indigo;
+    transition: 0.5s ease;
+}
+
+.button {
+    background-color: #3498db;
+    padding: 10px 30px;
+    color: white;
+    font-family: inherit;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    margin: 30px 10px;
+    cursor: pointer;
+}
+
+.button:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+.reset {
+    border: none;
+    color: white;
+    background-color: rgb(177, 66, 66);
+    padding: 10px 100px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 5px solid #e0e0e0;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* #f5f6fa
+#e0e0e0
+#3498db */

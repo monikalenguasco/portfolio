@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Steps</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <button id="toggleOrientation" class="button">Toggle Orientation</button>
+        <div id="stepText"></div>
+        <div class="progress-steps horizontal">
+            <div class="progress"></div>
+            <div class="circle" id="step1" title = "Step 1: Checkout">1</div>
+            <div class="circle" id="step2" title = "Step 2: Delivery Options">2</div>
+            <div class="circle" id="step3" title = "Step 3: Address info">3</div>
+            <div class="circle" id="step4" title = "Step 4: Order summary">4</div>
+        </div>
+        <div id="spinner" class="spinner hidden"></div>
+        <div class="button-row">
+        <button class="button" id="prev" disabled>Prev</button>
+        <button class="button" id="next">Next</button>
+        </div>
+        <button class="reset">Reset</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

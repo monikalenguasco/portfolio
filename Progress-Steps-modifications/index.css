@@ -1,0 +1,191 @@
+@import url(https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f5f6fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+}
+
+#stepText {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 25px;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    width: 350px;
+    position: relative;
+}
+
+.progress-steps.horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+    height: 50px;
+    position: relative;
+    margin: 0 auto 30px;
+}
+
+.progress-steps.vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50px;
+    height: 300px;
+    position: relative;
+    margin: 0 auto 30px;
+}
+
+.progress-steps::before {
+    content: '';
+    background-color: #e0e0e0;
+    position: absolute;
+    z-index: -1;
+}
+
+.progress-steps.horizontal::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    transform: translateY(-50%);
+}
+
+.progress-steps.vertical::before {
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+.progress {
+    content: '';
+    background-color: #3498db;
+    position: absolute;
+    z-index: -1;
+    transition: 0.4s ease;
+}
+
+.progress-steps.horizontal .progress {
+    top: 50%;
+    left: 0;
+    height: 4px;
+    transform: translateY(-50%);
+    width: 0%;
+
+}
+
+.progress-steps.vertical .progress {
+    top: 0;
+    left: 50%;
+    width: 4px;
+    transform: translateX(-50%);
+    height: 0%;
+
+}
+
+.circle {
+    background-color: white;
+    border: solid #e0e0e0 3px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e0e0e0;
+    font-size: 18px;
+}
+
+.circle.active#step1 {
+    border-color:#3498db;
+}
+
+.circle.active#step2 {
+    border-color: rebeccapurple;
+}
+
+.circle.active#step3 {
+    border-color:maroon;
+}
+
+.circle.active#step4 {
+    border-color:darkgoldenrod;
+}
+
+.button {
+    font-family: inherit;
+    font-weight: bold;
+    border: none;
+    background-color: #3498db;
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 30px 10px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.button:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+.reset {
+    font-family: inherit;
+    font-weight: bold;
+    border: none;
+    background-color: rgb(156, 57, 57);
+    padding: 15px 150px;
+    font-size: 18px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.spinner {
+    border: 4px solid #e0e0e0;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* #f5f6fa
+#e0e0e0
+#3498db */
