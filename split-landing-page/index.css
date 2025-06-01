@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+    --left-bg-color: rgba(87, 84, 236, 0.7);
+    --right-bg-color: rgba(43, 43, 43, 0.8);
+    --font-color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background: #333;
+}
+
+.container.split-left .split.left{
+    width: 75%;
+}
+
+.container.split-left .split.right{
+    width: 25%;
+}
+
+.container.split-right .split.right{
+    width: 75%;
+}
+
+.container.split-right .split.left{
+    width: 25%;
+}
+
+.split {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+}
+
+.split.left {
+    left: 0;
+    background-image: url(/salsa\ festival.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.left::before {
+    content: '';
+    background-color: var(--left-bg-color);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
+
+.split.right {
+    right: 0;
+    background-image: url(/bachata.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.right::before {
+    content: '';
+    background-color: var(--right-bg-color);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+    color: var(--font-color);
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.btn {
+    font-size: 1.5rem;
+    color: var(--font-color);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: var(--font-color) solid 0.25rem;
+    width: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+}
+
+.split.left .btn:hover {
+    background-color: var(--font-color);
+    color: var(--left-bg-color);
+}
+
+.split.split.right .btn:hover {
+    background-color: var(--font-color);
+    color: var(--right-bg-color);
+}
+
+.split.left,
+.split.left::before,
+.split.right,
+.split.right::before {
+    transition: all 1000ms ease-in-out;
+}
+
+@media (max-width: 800px) {
+    h1 {
+        font-size: 2rem;
+        top: 30%
+    }
+
+    .btn {
+        width: 12rem;
+    }
+}
