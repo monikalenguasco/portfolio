@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F0F0F0;
+    font-family: 'Mulish', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px 0 30px; 
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq-box {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 30px;
+    overflow: hidden;
+    background-color: transparent;
+    position: relative;
+    transition: 0.3s ease-in;
+}
+
+.faq-box.active {
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);;
+}
+
+.faq-box.active::before,
+.faq-box.active::after {
+    content: '\f075';
+    font-family: 'Font Awesome 5 Free';
+    font-size: 8rem;
+    color: #2ecc71;
+    position: absolute;
+    z-index: 0;
+    opacity: 0.2;
+    top: 20px;
+    left: 20px;
+}
+
+.faq-box.active::after {
+    transform: rotateY(-180deg);
+    left: -30px;
+    top: -10px;
+    color: #3498db;
+}
+
+.faq-box .faq-reply {
+    display: none;
+}
+
+.faq-box.active .faq-reply {
+    display: block;
+}
+
+.faq-toggle {
+    background-color: transparent;
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    font-size: 16px;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+}
+
+.faq-box.active .faq-toggle {
+    background-color: #9FA4A8;
+}
+
+.faq-box.active .faq-toggle .fas.fa-chevron-down {
+    display: none;
+}
+
+.faq-toggle .fas.fa-times {
+    color: transparent;
+}
+
+.faq-box.active .faq-toggle .fas.fa-times {
+    color: white;
+}
+
+
+
